@@ -5,6 +5,20 @@ echo "Esta es la bash del sistema operativo SportOS, podrás ejecutar comandos r
         echo Prueba los comandos especiales 'futbol', 'baloncesto' y 'f1'. 
         Si deseas salir de la bash, escribe 'salir'.
         ¡Que disfrutes de tu experiencia en SportOS!"
+echo "        ...----..
+     ,:':::::.     \`>.
+   ,' |:::::;'     |:::.
+  /    \`'::'       :::::\\
+ /         _     \`::;\\
+:         /:::::\\      \`  :
+| ,.     /::SSt::\\        |
+|;:::.   \`::::::;'        |
+::::::     \`::;'      ,.  ;
+ \\:::'              ,::::/
+  \\                 \\:::/
+   \`.     ,:.        :;'
+     \`-.::::::..  _.''
+        \\\`----'''¨"
 echo "Lista de comandos disponibles:
         - ayuda: Muestra una lista de comandos disponibles.
    	    - abrir: Para abrir un archivo.
