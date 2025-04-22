@@ -128,7 +128,6 @@ for nombre, info in apps.items():
     etiqueta = tk.Label(frame_app, text=nombre, bg="white", font=("Arial", 8))
     etiqueta.pack()
 
-# Barra de tareas
 barraDeTareas = tk.Frame(ventanaPrincipal, bg="#cccccc", height=50)
 barraDeTareas.pack(side="bottom", fill="x")
 
@@ -143,19 +142,15 @@ def abrir_por_texto(texto):
     try:
         texto = texto.lower().strip()
         if texto == "bash":
-            comando = 'wsl -d Ubuntu bash -c "cd /mnt/c/Users/alfon/Desktop/ProyectosVisualStudio/Universidad/InterfazDeUsuario/ && ./SportOS.sh"'
+            comando = 'wsl -d Ubuntu bash -c "cd /mnt/c/Users/alfon/Desktop/ProyectosVisualStudio/Universidad/InterfazDeUsuario/ && ./SportOS-Bash.sh"'
             subprocess.Popen(comando, shell=True)
         elif texto == "cmd":
-            # Abrir CMD de Windows
             subprocess.Popen(["cmd.exe"], shell=True)
         elif texto == "notepad" or texto == "bloc de notas":
-            # Abrir Notepad de Windows
             subprocess.Popen(["notepad.exe"], shell=True)
         elif texto.startswith(("http://", "https://")):
-            # Abrir URLs en navegador
             webbrowser.open(texto)
         else:
-            # Intentar ejecutar otros comandos
             subprocess.Popen([texto], shell=True)
     except FileNotFoundError:
         print(f"Error: No se encontró la aplicación o comando '{texto}'")
@@ -163,7 +158,6 @@ def abrir_por_texto(texto):
         print(f"Error inesperado al ejecutar '{texto}': {e}")
 entrada.bind("<Return>", lambda event: abrir_por_texto(entrada.get()))
 
-# Reloj con hover efecto
 relojFrame = tk.Frame(barraDeTareas, bg="lightgrey")
 relojFrame.place(relx=0.99, rely=0.1, anchor="ne")
 
@@ -188,9 +182,7 @@ relojFrame.bind("<Leave>", leave_reloj)
 
 actualizarHora()
 actualizarFecha()
-# ======================================================================
-# Iconos directamente en la ventana principal (sin contenedores)
-# ======================================================================
+
 iconos_principales = {
     "Bloc de notas": {
         "ruta": "notepad.exe",
@@ -239,7 +231,6 @@ for nombre, info in iconos_principales.items():
         )
         btn.image = icono
         btn.place(x=pos_x, y=pos_y)
-        # Efecto hover
         btn.bind("<Enter>", lambda e, b=btn: b.config(highlightbackground="cyan", highlightthickness=2))
         btn.bind("<Leave>", lambda e, b=btn: b.config(highlightthickness=0))
     else:
